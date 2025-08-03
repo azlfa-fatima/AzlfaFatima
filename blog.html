@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Azlfa Fatima's Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #b85c70;
+      --accent-dark: #8d2646;
+      --rose: #fff5f4;
+      --dark: #2e2e2e;
+      --light-bg: #fffaf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ========== Navigation ========== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent);
+  padding: 1rem 2rem;
+  color: white;
+}
+
+nav .logo {
+  font-family: 'Cinzel', cursive;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: pink;
+  
+}
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--rose);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--accent-dark);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .main-feed {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .post {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post img {
+      width: 200px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: var(--accent-dark);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .post-title {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+
+    .sidebar {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .category-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .category-box img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      filter: brightness(0.8);
+      transition: 0.3s ease;
+    }
+
+    .category-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--accent-dark);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .post {
+        flex-direction: column;
+      }
+
+      .post img {
+        width: 100%;
+        height: 180px;
+      }
+    }
+
+    footer.custom-footer {
+  background: var(--dark);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-top h2 {
+  font-family:'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+}
+
+.social-links img {
+  width: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.footer-column h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-books img {
+  height: 350px;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+}
+
+.footer-quote {
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--rose);
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+  </style>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const posts = document.querySelectorAll('.post');
+    const categoryBoxes = document.querySelectorAll('.category-box');
+    const searchInput = document.createElement('input');
+
+    // Create search bar
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search posts...';
+    searchInput.style.padding = '0.6rem';
+    searchInput.style.width = '100%';
+    searchInput.style.marginBottom = '1.2rem';
+    searchInput.style.borderRadius = '6px';
+    searchInput.style.border = '1px solid #ccc';
+
+    // Insert search box at top of sidebar
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.insertBefore(searchInput, sidebar.firstChild);
+
+    // Category click filtering
+    categoryBoxes.forEach(box => {
+      box.style.cursor = 'pointer';
+      box.addEventListener('click', () => {
+        const label = box.querySelector('.category-label').textContent.trim().toLowerCase();
+
+        posts.forEach(post => {
+          const tag = post.querySelector('.tag').textContent.trim().toLowerCase();
+          post.style.display = (tag === label) ? 'flex' : 'none';
+        });
+
+        // Optional: highlight selected category
+        categoryBoxes.forEach(b => b.classList.remove('selected'));
+        box.classList.add('selected');
+        box.style.outline = '2px solid var(--accent)';
+      });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', e => {
+      const query = e.target.value.toLowerCase();
+
+      posts.forEach(post => {
+        const title = post.querySelector('.post-title').textContent.toLowerCase();
+        const excerpt = post.querySelector('p').textContent.toLowerCase();
+        const match = title.includes(query) || excerpt.includes(query);
+
+        post.style.display = match ? 'flex' : 'none';
+      });
+
+      // Remove selected category filter when searching
+      categoryBoxes.forEach(b => {
+        b.classList.remove('selected');
+        b.style.outline = 'none';
+      });
+    });
+  });
+</script>
+
+</head>
+<body>
+  <!-- ================= NAVIGATION ================= -->
+    <nav class="fade-in">
+      <div class="logo">Azlfa Fatima</div>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./blog.html">Blogs</a></li>
+        <li><a href="./freebies.html">Freebies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  <header>
+    <h1>Azlfa Fatima's Blog</h1>
+    <p>Writerly musings, behind-the-scenes, and cozy creativity ✨</p>
+  </header>
+
+  <div class="container">
+    <!-- Main Blog Feed -->
+    <section class="main-feed">
+      <div class="post">
+        <img src="https://i.ibb.co/QD7NZsB/blog1.jpg" alt="Post Image">
+        <div class="post-content">
+          <span class="tag">Personal Growth</span>
+          <div>
+            <div class="post-title">5 Things I Learned Writing My First Novel</div>
+            <p>From messy drafts to unexpected inspiration—here’s what my debut book taught me about writing and myself.</p>
+          </div>
+          <div class="meta">August 2, 2025 • 16:30</div>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="https://i.ibb.co/3N5MKkT/blog2.jpg" alt="Post Image">
+        <div class="post-content">
+          <span class="tag">Lifestyle Tips</span>
+          <div>
+            <div class="post-title">Creating a Book Aesthetic on a Budget</div>
+            <p>No fairy lights? No problem. Here’s how I made my writing space dreamy without spending a lot.</p>
+          </div>
+          <div class="meta">August 1, 2025 • 14:00</div>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="https://i.ibb.co/BGxn2pF/blog3.jpg" alt="Post Image">
+        <div class="post-content">
+          <span class="tag">WritersLife Wednesdays</span>
+          <div>
+            <div class="post-title">Planning vs. Pantsing: What Worked For Me</div>
+            <p>I tried both methods. Spoiler: I found a sweet spot in-between that helped my story flow.</p>
+          </div>
+          <div class="meta">July 30, 2025 • 18:45</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar with Categories -->
+    <aside class="sidebar">
+      <div class="category-box">
+        <img src="https://i.ibb.co/zmTfSKL/category1.jpg" alt="Category">
+        <div class="category-label">WritersLife Wednesdays</div>
+      </div>
+      <div class="category-box">
+        <img src="https://i.ibb.co/LY9pxwR/category2.jpg" alt="Category">
+        <div class="category-label">Personal Growth</div>
+      </div>
+      <div class="category-box">
+        <img src="https://i.ibb.co/CWZpJXJ/category3.jpg" alt="Category">
+        <div class="category-label">Writing Tips</div>
+      </div>
+      <div class="category-box">
+        <img src="https://i.ibb.co/3cTFbQk/category4.jpg" alt="Category">
+        <div class="category-label">Productivity</div>
+      </div>
+      <div class="category-box">
+        <img src="https://i.ibb.co/bztLgVc/category5.jpg" alt="Category">
+        <div class="category-label">Blogging + Biz</div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+    <footer class="custom-footer fade-up">
+      <div class="footer-top">
+        <h2>Azlfa Fatima</h2>
+        <div class="social-links">
+
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Pinterest"></a>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Instagram Journey</a></li>
+            <li><a href="#">Bonus Content</a></li>
+            <li><a href="#">Coming Soon</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-books">
+        <img src="footer1.jpg" alt="Fourth Wing" />
+        <img src="footer2.jpg" alt="Iron Flame" />
+      </div>
+        <div class="footer-column">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Freebies</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <p class="footer-quote">"You feel like sunlight through lace-soft, golden, and almost to beautiful to hold."</p>
+      <p class="copyright">&copy; 2025 Azlfa Fatima. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
