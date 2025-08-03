@@ -98,6 +98,61 @@ nav ul li a:hover {
   
 }
 
+.intro-banner {
+  background: linear-gradient(to right, #f9d5e5, #ffe4ec);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.intro-content h1 {
+  font-size: 2.5rem;
+  color: #7a3d4d;
+  margin-bottom: 0.5rem;
+}
+
+.intro-content h2 {
+  font-size: 1.4rem;
+  color: #a25b73;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.intro-content p {
+  font-size: 1.1rem;
+  color: #5a4b4b;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.intro-buttons a {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #b35b7a;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #944663;
+}
+
+.btn-secondary {
+  border: 2px solid #b35b7a;
+  color: #b35b7a;
+}
+
+.btn-secondary:hover {
+  background-color: #fceff3;
+}
+
+
+
 /* ========== HERO SECTION ========== */
 .hero {
   padding: 4rem 2rem;
@@ -487,6 +542,28 @@ nav ul li a:hover {
   width: 200px;
   max-width: 100%;
 }
+.glow {
+  background-color: #c94f7c;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ffb3c6;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  transform: scale(1); /* base size */
+}
+
+.glow:hover {
+  background-color: #a83861;
+  box-shadow: 0 0 20px #ffb3c6, 0 0 40px #fceff3;
+  transform: scale(1.08); /* grow slightly on hover */
+}
+
+
 
 .bio-section {
   background-color: var(--rose); /* Soft pink or pastel background */
